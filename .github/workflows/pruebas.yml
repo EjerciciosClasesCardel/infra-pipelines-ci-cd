@@ -1,0 +1,32 @@
+name: Pruebas
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Pruebas de Calculadora
+        run: python -m pytest tests/test_main.py -v
+
+      - name: Pruebas de ConvertidorTemperatura
+        run: python -m pytest tests/test_converter.py -v
+
+      - name: El pipeline propio existe y tiene jobs y steps
+        run: |
+          test -f .github/workflows/ci.yml || { echo "Falta .github/workflows/ci.yml"; exit 1; }
+          grep -q "jobs:"  .github/workflows/ci.yml || { echo "ci.yml no declara jobs"; exit 1; }
+          grep -q "steps:" .github/workflows/ci.yml || { echo "ci.yml no declara steps"; exit 1; }
+          echo "El pipeline está en su sitio."
