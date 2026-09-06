@@ -87,13 +87,10 @@ y que las pruebas queden en verde.
 
 ## Qué se revisa
 
-| Criterio | Puntos |
-|---|---:|
-| Pasan las pruebas de `Calculadora` | 20 |
-| Pasan las pruebas de `ConvertidorTemperatura` | 40 |
-| Existe `.github/workflows/ci.yml` | 20 |
-| El workflow tiene `jobs:` y `steps:` | 20 |
-| **Total** | **100** |
+- Pasan las pruebas de `Calculadora`.
+- Pasan las pruebas de `ConvertidorTemperatura`.
+- Existe `.github/workflows/ci.yml`.
+- El workflow tiene `jobs:` y `steps:`.
 
 ## Qué mirar del pipeline
 
