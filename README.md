@@ -4,6 +4,10 @@ Infraestructuras Paralelas y Distribuidas
 Escuela de Ingeniería de Sistemas y Computación, Universidad del Valle
 Carlos Andrés Delgado Saavedra
 
+Lo que cada parte necesita de las bibliotecas y herramientas está en
+[DOCUMENTACION.md](DOCUMENTACION.md), con ejemplos que corren y los enlaces
+a la documentación oficial.
+
 Un pipeline de integración continua ejecuta las pruebas cada vez que alguien
 sube código, sin que nadie se acuerde de correrlas. Este ejercicio pide
 implementar unas funciones pendientes y montar el pipeline que las verifica.
