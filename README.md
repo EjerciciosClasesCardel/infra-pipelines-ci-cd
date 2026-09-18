@@ -27,6 +27,23 @@ implementar unas funciones pendientes y montar el pipeline que las verifica.
     └── ci.yml               el que hay que escribir
 ```
 
+## Requisitos
+
+| Qué | Linux (Debian/Ubuntu) | macOS | Windows |
+|---|---|---|---|
+| Python 3.11 con `pip` | `sudo apt install python3 python3-pip python3-venv` | `brew install python` o el instalador de python.org | instalador de python.org, marcando *Add python.exe to PATH* |
+| `pytest` | `pip install -r requirements.txt` | igual | igual |
+| Git y una cuenta de GitHub | `sudo apt install git` | `xcode-select --install` | [Git para Windows](https://git-scm.com/downloads/win) |
+
+El pipeline corre en GitHub, no en la máquina propia, así que el sistema
+operativo solo importa para escribir el código y las pruebas. Lo que sí
+importa es que `python -m pytest tests/ -v` pase en la máquina antes del
+`push`; si pasa aquí y falla en Actions, lo que falta es una dependencia
+en `requirements.txt`.
+
+Los detalles de cada sistema están en
+[DOCUMENTACION.md](DOCUMENTACION.md), al final.
+
 ## Ejecutar en la máquina propia
 
 ```bash
